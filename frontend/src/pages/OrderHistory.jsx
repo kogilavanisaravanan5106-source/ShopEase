@@ -20,7 +20,7 @@ function OrderHistory() {
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/orders/${orderId}/cancel`,
+        `https://shopease-backend-c7sq.onrender.com/api/orders/${orderId}/cancel`,
         {},
         {
           headers: {
@@ -50,7 +50,7 @@ function OrderHistory() {
         const token = localStorage.getItem("shopeaseToken");
 
         const response = await axios.get(
-          "http://localhost:5000/api/orders",
+          "https://shopease-backend-c7sq.onrender.com/api/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`,

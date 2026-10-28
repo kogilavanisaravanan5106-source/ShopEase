@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import "./AdminDashboard.css";
 
-const API_URL = "http://localhost:5000/api/orders";
+const API_URL = "https://shopease-backend-c7sq.onrender.com/api/orders";
 
 function AdminDashboard() {
   const [orders, setOrders] = useState([]);

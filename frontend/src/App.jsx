@@ -96,7 +96,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get("https://shopease-backend-c7sq.onrender.com/api/products")
       .then((response) => {
         setProducts(response.data);
       })
@@ -247,7 +247,7 @@ function App() {
       // Keep Cash on Delivery working as before.
       if (paymentMethod === "cod") {
         const response = await axios.post(
-          "http://localhost:5000/api/orders",
+          "https://shopease-backend-c7sq.onrender.com/api/orders",
           {
             customer,
             items,
@@ -283,7 +283,7 @@ function App() {
 
       // Create the payment order on the backend.
       const paymentResponse = await axios.post(
-        "http://localhost:5000/api/payments/create-order",
+        "https://shopease-backend-c7sq.onrender.com/api/payments/create-order",
         { customer, items },
         {
           headers: {
@@ -305,7 +305,7 @@ function App() {
         handler: async function (paymentResult) {
           try {
             const verificationResponse = await axios.post(
-              "http://localhost:5000/api/payments/verify",
+              "https://shopease-backend-c7sq.onrender.com/api/payments/verify",
               {
                 shopOrderId: paymentData.shopOrderId,
                 razorpay_order_id: paymentResult.razorpay_order_id,
@@ -390,7 +390,7 @@ function App() {
 
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/orders",
+        "https://shopease-backend-c7sq.onrender.com/api/orders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -443,7 +443,7 @@ function App() {
           };
 
       const response = await axios.post(
-        `http://localhost:5000/api/auth/${endpoint}`,
+        `https://shopease-backend-c7sq.onrender.com/api/auth/${endpoint}`,
         payload
       );
 
