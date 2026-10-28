@@ -10,7 +10,7 @@ const authRoutes = require("./routes/auth");
 const Product = require("./models/Product");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/shopease")
+  .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/shopease")
   .then(() => console.log("MongoDB connected successfully!"))
   .catch((error) => console.error("MongoDB connection error:", error));
 
